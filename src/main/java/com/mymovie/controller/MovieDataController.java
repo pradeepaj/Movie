@@ -10,21 +10,20 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.mymovie.dto.TheatreDto;
-import com.mymovie.entity.Theatre;
-import com.mymovie.service.TheatreService;
+import com.mymovie.dto.MovieName;
+import com.mymovie.service.MovieDataService;
 
 @RestController
 @RequestMapping("/api")
 @CrossOrigin(allowedHeaders = { "*", "*/" }, origins = { "*", "*/" })
-public class MovieController {
+public class MovieDataController {
 	
 	@Autowired
-	private TheatreService theatreService;
-	
-	@GetMapping("/getAllTheatres")
-	public ResponseEntity<List<TheatreDto>> allTheatres(){
-		return new ResponseEntity<List<TheatreDto>>(theatreService.getAllTheatres(),HttpStatus.OK);
-	}
+	MovieDataService movieDataService;
 
+	@GetMapping("/getAllMovies")
+	public ResponseEntity<List<MovieName>> getMovieList()
+	{
+		return new ResponseEntity<List<MovieName>>(movieDataService.getMovieName(),HttpStatus.OK);
+	}
 }
