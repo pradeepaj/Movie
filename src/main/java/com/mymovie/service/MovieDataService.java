@@ -1,11 +1,14 @@
 package com.mymovie.service;
 
-import java.util.List;
 
-import com.mymovie.dto.MovieName;
+import org.springframework.stereotype.Service;
 
+import com.mymovie.dto.TheatreList;
+
+@Service
 public interface MovieDataService {
 	
-	public List<MovieName> getMovieName();
+	
+	TheatreList getMovieName();
 
 }

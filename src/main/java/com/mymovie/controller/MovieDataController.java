@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.mymovie.dto.MovieName;
+import com.mymovie.dto.TheatreList;
 import com.mymovie.service.MovieDataService;
 
 @RestController
@@ -20,10 +21,10 @@ public class MovieDataController {
 	
 	@Autowired
 	MovieDataService movieDataService;
-
+	
 	@GetMapping("/getAllMovies")
-	public ResponseEntity<List<MovieName>> getMovieList()
+	public ResponseEntity<TheatreList> getMovieList1()
 	{
-		return new ResponseEntity<List<MovieName>>(movieDataService.getMovieName(),HttpStatus.OK);
+		return new ResponseEntity<TheatreList>(movieDataService.getMovieName(),HttpStatus.OK);
 	}
 }
